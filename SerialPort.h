@@ -32,23 +32,8 @@ public:
 
   void process();
 
-  void writeDStarHeader(const uint8_t* header, uint8_t length);
-  void writeDStarData(const uint8_t* data, uint8_t length);
-  void writeDStarLost();
-  void writeDStarEOT();
-
   void writeDMRData(bool slot, const uint8_t* data, uint8_t length);
   void writeDMRLost(bool slot);
-
-  void writeYSFData(const uint8_t* data, uint8_t length);
-  void writeYSFLost();
-
-  void writeP25Hdr(const uint8_t* data, uint8_t length);
-  void writeP25Ldu(const uint8_t* data, uint8_t length);
-  void writeP25Lost();
-
-  void writeNXDNData(const uint8_t* data, uint8_t length);
-  void writeNXDNLost();
 
   void writeCalData(const uint8_t* data, uint8_t length);
   void writeRSSIData(const uint8_t* data, uint8_t length);

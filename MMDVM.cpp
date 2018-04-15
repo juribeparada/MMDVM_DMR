@@ -37,9 +37,6 @@ bool m_duplex = true;
 bool m_tx  = false;
 bool m_dcd = false;
 
-CDStarRX   dstarRX;
-CDStarTX   dstarTX;
-
 CDMRIdleRX dmrIdleRX;
 CDMRRX     dmrRX;
 CDMRTX     dmrTX;
@@ -47,20 +44,7 @@ CDMRTX     dmrTX;
 CDMRDMORX  dmrDMORX;
 CDMRDMOTX  dmrDMOTX;
 
-CYSFRX     ysfRX;
-CYSFTX     ysfTX;
-
-CP25RX     p25RX;
-CP25TX     p25TX;
-
-CNXDNRX    nxdnRX;
-CNXDNTX    nxdnTX;
-
-CCalDStarRX calDStarRX;
-CCalDStarTX calDStarTX;
 CCalDMR     calDMR;
-CCalP25     calP25;
-CCalNXDN    calNXDN;
 CCalRSSI    calRSSI;
 
 CCWIdTX cwIdTX;
@@ -80,9 +64,6 @@ void loop()
   io.process();
 
   // The following is for transmitting
-  if (m_dstarEnable && m_modemState == STATE_DSTAR)
-    dstarTX.process();
-
   if (m_dmrEnable && m_modemState == STATE_DMR) {
     if (m_duplex)
       dmrTX.process();
@@ -90,26 +71,8 @@ void loop()
       dmrDMOTX.process();
   }
 
-  if (m_ysfEnable && m_modemState == STATE_YSF)
-    ysfTX.process();
-
-  if (m_p25Enable && m_modemState == STATE_P25)
-    p25TX.process();
-
-  if (m_nxdnEnable && m_modemState == STATE_NXDN)
-    nxdnTX.process();
-
-  if (m_modemState == STATE_DSTARCAL)
-    calDStarTX.process();
-
   if (m_modemState == STATE_DMRCAL || m_modemState == STATE_LFCAL || m_modemState == STATE_DMRCAL1K || m_modemState == STATE_DMRDMO1K)
     calDMR.process();
-
-  if (m_modemState == STATE_P25CAL1K)
-    calP25.process();
-
-  if (m_modemState == STATE_NXDNCAL1K)
-    calNXDN.process();
 
   if (m_modemState == STATE_IDLE)
     cwIdTX.process();

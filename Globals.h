@@ -66,21 +66,9 @@ enum MMDVM_STATE {
 #include "DMRIdleRX.h"
 #include "DMRDMORX.h"
 #include "DMRDMOTX.h"
-#include "DStarRX.h"
-#include "DStarTX.h"
 #include "DMRRX.h"
 #include "DMRTX.h"
-#include "YSFRX.h"
-#include "YSFTX.h"
-#include "P25RX.h"
-#include "P25TX.h"
-#include "NXDNRX.h"
-#include "NXDNTX.h"
-#include "CalDStarRX.h"
-#include "CalDStarTX.h"
 #include "CalDMR.h"
-#include "CalP25.h"
-#include "CalNXDN.h"
 #include "CalRSSI.h"
 #include "CWIdTX.h"
 #include "Debug.h"
@@ -111,9 +99,6 @@ extern bool m_dcd;
 extern CSerialPort serial;
 extern CIO io;
 
-extern CDStarRX dstarRX;
-extern CDStarTX dstarTX;
-
 extern CDMRIdleRX dmrIdleRX;
 extern CDMRRX dmrRX;
 extern CDMRTX dmrTX;
@@ -121,20 +106,7 @@ extern CDMRTX dmrTX;
 extern CDMRDMORX dmrDMORX;
 extern CDMRDMOTX dmrDMOTX;
 
-extern CYSFRX ysfRX;
-extern CYSFTX ysfTX;
-
-extern CP25RX p25RX;
-extern CP25TX p25TX;
-
-extern CNXDNRX nxdnRX;
-extern CNXDNTX nxdnTX;
-
-extern CCalDStarRX calDStarRX;
-extern CCalDStarTX calDStarTX;
 extern CCalDMR     calDMR;
-extern CCalP25     calP25;
-extern CCalNXDN    calNXDN;
 extern CCalRSSI    calRSSI;
 
 extern CCWIdTX cwIdTX;
