@@ -76,7 +76,7 @@ const uint8_t MMDVM_DEBUG3       = 0xF3U;
 const uint8_t MMDVM_DEBUG4       = 0xF4U;
 const uint8_t MMDVM_DEBUG5       = 0xF5U;
 
-#define DESCRIPTION              "MMDVM 20180327 (D-Star/DMR/System Fusion/P25/NXDN)"
+#define DESCRIPTION              "MMDVM 20180415 (DMR only)"
 
 #if defined(GITVERSION)
 #define concat(a, b) a " GitID #" b ""
